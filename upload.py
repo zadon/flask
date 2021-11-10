@@ -6,7 +6,7 @@ from flask_login import login_required
 from werkzeug.utils import secure_filename
 
 upload = Blueprint('upload', __name__)
-UPLOAD_FOLDER = os.path.curdir
+UPLOAD_FOLDER = os.environ['PWD']
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'csv'}
 
 

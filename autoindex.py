@@ -1,11 +1,15 @@
 #!/usr/bin/python3
 import os
+
+from dotenv import find_dotenv, load_dotenv
 from flask import Blueprint
 from flask_autoindex import AutoIndexBlueprint
 from flask_login import login_required
 
+load_dotenv(find_dotenv())
+
 autoindex = Blueprint('autoindex', __name__)
-file_index = AutoIndexBlueprint(autoindex, browse_root=os.environ['PWD'], add_url_rules=False)
+file_index = AutoIndexBlueprint(autoindex, browse_root=os.environ.get('DIR'), add_url_rules=False)
 
 
 @autoindex.route('/')

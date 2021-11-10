@@ -1,12 +1,15 @@
 #!/usr/bin/python3
 import os
+from dotenv import load_dotenv, find_dotenv
 
 from flask import Blueprint, render_template, request, flash, redirect
 from flask_login import login_required
 from werkzeug.utils import secure_filename
 
+load_dotenv(find_dotenv())
+
 upload = Blueprint('upload', __name__)
-UPLOAD_FOLDER = os.environ['PWD']
+UPLOAD_FOLDER = os.environ.get('DIR')
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'csv'}
 
 

@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import os
 
 from flask import Flask
 from flask_login import LoginManager
@@ -7,7 +8,7 @@ from .models import UserBase
 
 def create_app():
     app = Flask(__name__)
-    app.secret_key = 'jdbksjdvnvjndskjdn'
+    app.secret_key = 'hdsfjkhdsjfk'
 
     # blueprint for auth routes in our app
     from .auth import auth as auth_blueprint

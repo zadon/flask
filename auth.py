@@ -8,10 +8,6 @@ from .models import UserBase, User
 
 auth = Blueprint('auth', __name__)
 
-passwd_auth = {
-    'user': '123'
-}
-
 
 @auth.route('/login')
 def login():
